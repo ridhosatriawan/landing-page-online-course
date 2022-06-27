@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap");
+
+      * {
+        font-family: "Nunito", sans-serif;
+      }
+
+      /* navbar style */
+      .spacing {
+        padding-right: 10px;
+        padding-left: 10px;
+      }
+      @media only screen and (min-width: 992px) {
+        .spacing {
+          padding-right: 100px;
+          padding-left: 100px;
+        }
+      }
+      /* end navbar style */
+      
+      /* banner style */
+      .spacing {
+        padding-right: 10px;
+        padding-left: 10px;
+      }
+
+      .banner .banner-title {
+        font-size: 50px;
+      }
+
+      @media only screen and (max-width: 576px) {
+        .banner .banner-title {
+          font-size: 30px;
+        }
+        .banner {
+          padding-top: 20px;
+        }
+      }
+
+      @media only screen and (min-width: 576px) and (max-width: 992px) {
+        .banner {
+          padding-top: 20px;
+        }
+      }
+      @media only screen and (min-width: 992px) {
+        .spacing {
+          padding-right: 100px;
+          padding-left: 100px;
+        }
+      }
+      /* end banner style */
+
+      /* Journey Style */
+      .spacing {
+        padding-right: 10px;
+        padding-left: 10px;
+      }
+
+      .journey {
+        height: auto;
+      }
+
+      .container-card-journey {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .card-journey {
+        margin-bottom: 10px;
+      }
+
+      @media only screen and (max-width: 576px) {
+        .journey-title{
+          text-align: center;
+        }
+        .container-card-journey {
+          background: linear-gradient(
+            to top,
+            #e9e9e9 0%,
+            #e9e9e9 40%,
+            #ffffff 40%,
+            #ffffff 100%
+          );
+        }
+      }
+
+      @media only screen and (min-width: 576px) and (max-width: 992px) {
+        .journey-title {
+          text-align: left;
+        }
+        .container-card-journey {
+          width: 75%;
+        }
+        .journey {
+          background: linear-gradient(
+            to right,
+            #e9e9e9 0%,
+            #e9e9e9 40%,
+            #ffffff 40%,
+            #ffffff 100%
+          );
+        }
+      }
+
+      @media only screen and (min-width: 992px) {
+        .spacing {
+          padding-right: 100px;
+          padding-left: 100px;
+        }
+
+        .journey {
+          background: linear-gradient(
+            to right,
+            #e9e9e9 0%,
+            #e9e9e9 40%,
+            #ffffff 40%,
+            #ffffff 100%
+          );
+
+          height: 350px;
+        }
+
+        .container-card-journey {
+          width: 50%;
+          flex-direction: row;
+        }
+
+        .card-journey {
+          margin-bottom: 0;
+        }
+
+        .journey-title {
+          padding-left: 30px;
+        }
+      }
+
+      /* end Journey Style */
+
+      /* popular course style */
+      .spacing {
+        padding-right: 10px;
+        padding-left: 10px;
+      }
+      .card-popular-course {
+        width: 250px;
+        height: 250px;
+      }
+
+      @media only screen and (max-width: 576px) {
+        .card-popular-course {
+          margin-bottom: 20px;
+        }
+        .popular-course {
+          align-items: center;
+        }
+      }
+
+      @media only screen and (min-width: 576px) and (max-width: 992px) {
+        .popular-course {
+          align-items: center;
+        }
+        .card-popular-course {
+          margin-left: 20px;
+          margin-right: 20px;
+        }
+        .container-card-popular-course {
+          height: 600px;
+          width: 600px;
+          justify-content: space-around;
+          align-items: center;
+        }
+      }
+
+      @media only screen and (min-width: 992px) {
+        .spacing {
+          padding-right: 100px;
+          padding-left: 100px;
+        }
+      }
+
+      /* end popular course style */
+
+      /* teacher style */
+      .spacing {
+        padding-right: 10px;
+        padding-left: 10px;
+      }
+      .teacher-section {
+        background-color: #e9e9e9;
+      }
+      .teacher-card {
+        width: 200px;
+        height: 350px;
+      }
+
+      @media only screen and (max-width: 576px) {
+        .title-teacher-section {
+          text-align: center;
+        }
+        .teacher-card:not(:last-child) {
+          margin-bottom: 20px;
+        }
+      }
+
+      @media only screen and (min-width: 576px) and (max-width: 992px) {
+        .teacher-section {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .teacher-card-container {
+          width: 450px;
+          height: 800px;
+          flex-wrap: wrap;
+          margin-top: 20px;
+        }
+        .teacher-card:last-child {
+          display: none;
+        }
+        .title-teacher-section {
+          text-align: center;
+        }
+      }
+
+      @media only screen and (min-width: 992px) {
+        .spacing {
+          padding-right: 100px;
+          padding-left: 100px;
+        }
+      }
+
+      /* end teacher style */
+
+      /* footer style */
+      .spacing {
+        padding-right: 10px;
+        padding-left: 10px;
+      }
+
+      .footer-header {
+        width: 25%;
+      }
+
+      footer ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      footer ul li {
+        list-style: none;
+      }
+
+      @media only screen and (max-width: 576px) {
+
+        footer section:not(:first-child) {
+          width: 50%;
+          margin-bottom: 20px;
+        }
+
+        .footer-header {
+          width: 100%;
+        }
+      }
+
+      @media only screen and (min-width: 992px) {
+        .spacing {
+          padding-right: 100px;
+          padding-left: 100px;
+        }
+      }
+
+      /* end footer style */
+      
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg shadow-sm spacing">
+      <div class="container-fluid px-0">
+        <a class="navbar-brand fs-3 fw-bold text-success">GadaWangi</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse flex-grow-0"
+          id="navbarNavDropdown"
+        >
+          <ul class="navbar-nav fw-semibold">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <button
+                type="button"
+                class="btn rounded-pill bg-success text-white"
+              >
+                Get Started!
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header class="h-auto">
+      <div
+        class="banner d-flex align-items-center justify-content-between flex-column flex-lg-row spacing"
+      >
+        <div class="text-center text-lg-start">
+          <h1 class="fw-bold banner-title">
+            Right Place <br />
+            For You To Be <br />
+            a Programmer
+          </h1>
+          <p class="fw-semibold text-black-50">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          </p>
+          <button class="btn bg-success rounded-pill text-white">
+            Get Started!
+          </button>
+        </div>
+
+        <div>
+          <img src="/img/working boy.png" alt="banner pict" class="img-fluid" />
+        </div>
+      </div>
+    </header>
+    <section
+      class="my-3 d-flex align-items-center flex-column-reverse flex-md-row journey spacing"
+    >
+      <div
+        class="container-card-journey h-100 d-flex flex-wrap align-content-around justify-content-between py-5"
+      >
+        <div class="card-journey bg-white p-3 d-flex align-items-center shadow">
+          <div
+            style="width: 50px; height: 50px"
+            class="bg-success rounded-circle d-flex justify-content-center align-items-center me-2 fs-4 text-white"
+          >
+            <i class="fa-regular fa-circle-play"></i>
+          </div>
+          <div class="d-flex flex-column">
+            <span class="fw-bold">Video Course</span>
+            <span>Lorem, ipsum dolor amet.</span>
+          </div>
+        </div>
+        <div class="card-journey bg-white p-3 d-flex align-items-center shadow">
+          <div
+            style="width: 50px; height: 50px"
+            class="bg-success rounded-circle d-flex justify-content-center align-items-center me-2 fs-4 text-white"
+          >
+            <i class="fa-regular fa-file"></i>
+          </div>
+          <div class="d-flex flex-column">
+            <span class="fw-bold">Daily Task</span>
+            <span>Lorem, ipsum dolor amet.</span>
+          </div>
+        </div>
+        <div class="card-journey bg-white p-3 d-flex align-items-center shadow">
+          <div
+            style="width: 50px; height: 50px"
+            class="bg-success rounded-circle d-flex justify-content-center align-items-center me-2 fs-4 text-white"
+          >
+            <i class="fa-regular fa-comment-dots"></i>
+          </div>
+          <div class="d-flex flex-column">
+            <span class="fw-bold">Discuss With Teacher</span>
+            <span>Lorem, ipsum dolor amet.</span>
+          </div>
+        </div>
+        <div class="card-journey bg-white p-3 d-flex align-items-center shadow">
+          <div
+            style="width: 50px; height: 50px"
+            class="bg-success rounded-circle d-flex justify-content-center align-items-center me-2 fs-4 text-white"
+          >
+            <i class="fa-solid fa-infinity"></i>
+          </div>
+          <div class="d-flex flex-column">
+            <span class="fw-bold">Forever Access</span>
+            <span>Lorem, ipsum dolor amet.</span>
+          </div>
+        </div>
+      </div>
+      <div class="journey-title">
+        <h2 class="text-black fs-1 fw-bold">
+          Start Your Learning <br />
+          Journey Today!
+        </h2>
+        <p class="fw-semibold text-black-50">
+          Let's start your journey to become what you want with us
+        </p>
+        <button class="btn bg-success rounded-pill text-white">Sign Up</button>
+      </div>
+    </section>
+    <section class="popular-course d-flex flex-column spacing my-5">
+      <div class="popular-course-header text-center">
+        <h2 class="text-black fs-1 fw-bold">Popular Course</h2>
+        <p class="fw-semibold text-black-50">
+          here are some popular courses you can take
+        </p>
+      </div>
+      <div
+        class="container-card-popular-course d-flex flex-column flex-md-row flex-wrap justify-content-between mt-4"
+      >
+        <div
+          class="card-popular-course bg-white shadow d-flex flex-column justify-content-center align-items-center p-3"
+        >
+          <div class="fs-2 text-success">
+            <i class="fa-solid fa-table-columns"></i>
+          </div>
+          <h3 class="fw-bold fs-5 mb-3 border-bottom border-2 border-success">
+            Web Design
+          </h3>
+          <p class="text-center text-black-50">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero optio
+          </p>
+        </div>
+        <div
+          class="card-popular-course bg-white shadow d-flex flex-column justify-content-center align-items-center p-3"
+        >
+          <div class="fs-2 text-success">
+            <i class="fa-brands fa-react"></i>
+          </div>
+          <h3 class="fw-bold fs-5 mb-3 border-bottom border-2 border-success">
+            Front-End Developer
+          </h3>
+          <p class="text-center text-black-50">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero optio
+          </p>
+        </div>
+        <div
+          class="card-popular-course bg-white shadow d-flex flex-column justify-content-center align-items-center p-3"
+        >
+          <div class="fs-2 text-success">
+            <i class="fa-brands fa-js"></i>
+          </div>
+          <h3 class="fw-bold fs-5 mb-3 border-bottom border-2 border-success">
+            Back-End Developer
+          </h3>
+          <p class="text-center text-black-50">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero optio
+          </p>
+        </div>
+        <div
+          class="card-popular-course bg-white shadow d-flex flex-column justify-content-center align-items-center p-3"
+        >
+          <div class="fs-2 text-success">
+            <i class="fa-solid fa-mobile-screen"></i>
+          </div>
+          <h3 class="fw-bold fs-5 mb-3 border-bottom border-2 border-success">
+            Mobile Developer
+          </h3>
+          <p class="text-center text-black-50">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero optio
+          </p>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center mt-5">
+        <a href="#" class="text-success text-decoration-none fw-bold">
+          Show All Course
+        </a>
+      </div>
+    </section>
+    <section class="teacher-section spacing py-5">
+      <div
+        class="title-teacher-section d-flex align-items-center justify-content-between flex-column flex-lg-row"
+      >
+        <div>
+          <h2 class="fs-1 fw-bold text-black">Our Teacher</h2>
+          <p class="fw-semibold text-black-50">
+            Here are the teacher you'll be meet
+          </p>
+        </div>
+        <div>
+          <a href="#" class="text-success text-decoration-none fw-bold">
+            Show All
+          </a>
+        </div>
+      </div>
+      <div
+        class="teacher-card-container d-flex justify-content-between flex-column flex-md-row align-items-center mt-2"
+      >
+        <div class="teacher-card bg-white shadow">
+          <div class="d-flex justify-content-center align-items-center h-50">
+            <img src="./img/teacher4.jpg" class="img-fluid h-75  rounded-circle shadow" alt="">
+          </div>
+          <div class="h-50 text-center p-2">
+            <div class="fs-5 fw-bold">
+              Chris Redfield
+            </div>
+            <span class="text-success">Front-End Teacher</span>
+            <p class="text-black-50">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class="teacher-card bg-white shadow">
+          <div class="d-flex justify-content-center align-items-center h-50">
+            <img src="./img/teacher5.jpg" class="img-fluid h-75  rounded-circle shadow" alt="">
+          </div>
+          <div class="h-50 text-center p-2">
+            <div class="fs-5 fw-bold">
+              Ada Wong
+            </div>
+            <span class="text-success">UI/UX Teacher</span>
+            <p class="text-black-50">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class="teacher-card bg-white shadow">
+          <div class="d-flex justify-content-center align-items-center h-50">
+            <img src="./img/teacher2.jpg" class="img-fluid h-75  rounded-circle shadow" alt="">
+          </div>
+          <div class="h-50 text-center p-2">
+            <div class="fs-5 fw-bold">
+            Leon S.Kennedy
+            </div>
+            <span class="text-success">Back-End Teacher</span>
+            <p class="text-black-50">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class="teacher-card bg-white shadow">
+          <div class="d-flex justify-content-center align-items-center h-50">
+            <img src="./img/teacher1.jpg" class="img-fluid h-75  rounded-circle shadow" alt="">
+          </div>
+          <div class="h-50 text-center p-2">
+            <div class="fs-5 fw-bold">
+              Jill Valentine
+            </div>
+            <span class="text-success">Mobile Dev Teacher</span>
+            <p class="text-black-50">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class="teacher-card bg-white shadow">
+          <div class="d-flex justify-content-center align-items-center h-50">
+            <img src="./img/teacher3.jpg" class="img-fluid h-75  rounded-circle shadow" alt="">
+          </div>
+          <div class="h-50 text-center p-2">
+            <div class="fs-5 fw-bold">
+              Ethan Winters
+            </div>
+            <span class="text-success">Dev Ops Teacher</span>
+            <p class="text-black-50">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="pt-5 pb-3">
+      <div
+        class="spacing d-flex flex-md-row align-items-start justify-content-between flex-wrap"
+      >
+        <section class="footer-header">
+          <h3 class="text-success fs-3 fw-bold">GadaWangi</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate,
+            cupiditate.
+          </p>
+        </section>
+        <section>
+          <h6>Information</h5>
+          <ul>
+            <li class="text-black-50">Home</li>
+            <li class="text-black-50">About</li>
+            <li class="text-black-50">Courses</li>
+            <li class="text-black-50">Pricing</li>
+          </ul>
+        </section>
+        <section>
+          <h6>Helpfull Links</h5>
+          <ul>
+            <li class="text-black-50">Students</li>
+            <li class="text-black-50">Teachers</li>
+            <li class="text-black-50">Business</li>
+            <li class="text-black-50">Investor</li>
+          </ul>
+        </section>
+        <section>
+          <h6>Our Secvices</h5>
+          <ul>
+            <li class="text-black-50">Design</li>
+            <li class="text-black-50">Study</li>
+            <li class="text-black-50">Marketing</li>
+            <li class="text-black-50">App Developing</li>
+          </ul>
+        </section>
+        <section>
+          <h6>Contact</h5>
+          <ul>
+            <li class="text-black-50">Gadawangi.com</li>
+            <li class="text-black-50">gadawangi@gmail.com</li>
+            <li class="text-black-50">Telp. 089765656652</li>
+            <li class="fs-4 text-black-50">
+              <i class="fa-brands fa-twitter"></i>
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-youtube"></i>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <div class="text-center text-black-50">&copyGadawangi</div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
